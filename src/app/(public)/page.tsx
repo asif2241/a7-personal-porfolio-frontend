@@ -1,6 +1,7 @@
 "use client";
 import { Hero } from "@/components/Home/Hero";
 import { Swipers } from "@/components/Home/Swiper";
+import WhyChooseMe from "@/components/Home/WhyChooseMe";
 import { Navbar } from "@/components/shared/Navbar";
 
 export default function HomePage() {
@@ -10,6 +11,7 @@ export default function HomePage() {
             <main>
                 <Hero></Hero>
                 <Swipers></Swipers>
+                <WhyChooseMe></WhyChooseMe>
             </main>
             <h2 className="text-center my-5 text-4xl">Home Page</h2>
         </div>
