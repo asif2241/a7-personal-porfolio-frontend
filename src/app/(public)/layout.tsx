@@ -5,7 +5,7 @@ const PublicLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => 
     return (
         <>
             <main className="min-h-dvh">
-                <Navbar></Navbar>
+                <nav className="md:w-4/5 w-11/12 mx-auto"> <Navbar></Navbar> </nav>
                 {children}
                 <Footer></Footer>
             </main>

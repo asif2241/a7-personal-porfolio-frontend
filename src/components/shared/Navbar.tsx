@@ -1,16 +1,16 @@
 "use client";
+import { useAuth } from '@/context/AuthContext';
 import Link from 'next/link';
 import React from 'react'
 export const Navbar = () => {
 
     const links = <>
+        <li> <Link href="/" >Home</Link> </li>
         <li> <Link href="#" >Item 1</Link> </li>
         <li> <Link href="#" >Item 1</Link> </li>
-        <li> <Link href="#" >Item 1</Link> </li>
-        <li> <Link href="#" >Item 1</Link> </li>
-
     </>
 
+    const { user } = useAuth()
 
     return (
         <div className="navbar bg-base-100 ">
@@ -37,7 +37,9 @@ export const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Login</a>
+                {
+                    user ? <Link href="/dashboard"><button className='btn'>Dashboard</button></Link> : <Link href="/login"><button className='btn'>Login</button></Link>
+                }
             </div>
         </div>
     )
