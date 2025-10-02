@@ -2,6 +2,7 @@
 import { Hero } from "@/components/Home/Hero";
 import { Swipers } from "@/components/Home/Swiper";
 import WhyChooseMe from "@/components/Home/WhyChooseMe";
+import { Footer } from "@/components/shared/Footer";
 import { Navbar } from "@/components/shared/Navbar";
 
 export default function HomePage() {
@@ -13,7 +14,7 @@ export default function HomePage() {
                 <Swipers></Swipers>
                 <WhyChooseMe></WhyChooseMe>
             </main>
-            <h2 className="text-center my-5 text-4xl">Home Page</h2>
+            <Footer></Footer>
         </div>
     );
 }

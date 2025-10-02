@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image"
 import programmerImg from "../../assets/photopea.png.png"
-
 export const Hero = () => {
     return (
         <div className="hero bg-[linear-gradient(256.24deg,rgba(255,195,152,0.2)_26.56%,rgba(255,234,190,0.3)_100%)] lg:min-h-90vh lg:my-5">
