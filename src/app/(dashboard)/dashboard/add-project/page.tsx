@@ -1,10 +1,8 @@
-import React from "react";
+import { AddProjectForm } from "@/components/dashboard/project/AddProjectForm";
 
 const AddProject = () => {
     return (
-        <div className=" flex justify-center items-center">
-            <h3>add project page</h3>
-        </div>
+        <AddProjectForm></AddProjectForm>
     );
 };
 

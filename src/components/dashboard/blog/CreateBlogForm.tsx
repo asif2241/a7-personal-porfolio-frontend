@@ -1,16 +1,20 @@
 "use client"
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react'
+import Form from "next/form";
+import { createBlog } from '@/actions/createBlog';
+
 
 export const CreateBlogForm = () => {
 
-    const handleSubmit = (e: any) => {
-        e.preventDefault()
-    }
+    // const handleSubmit = (e: any) => {
+    //     e.preventDefault()
+    // }
 
     return (
         <div className=" flex justify-center w-4/5 md:w-full px-2 my-10  ">
             <div>
-                <form
+                <Form action={createBlog}
                     //   onSubmit={handleSubmit}
                     className="grid grid-cols-2 gap-5  mx-auto"
                 >
@@ -74,7 +78,7 @@ export const CreateBlogForm = () => {
                         type="submit"
                         value="Submit"
                     />
-                </form>
+                </Form>
             </div>
         </div>
     )

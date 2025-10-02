@@ -19,7 +19,7 @@ export const Sidebar = () => {
                 <Image width={30} height={30} alt="" src={"https://img.icons8.com/?size=100&id=73&format=png&color=000000"}></Image>
                 {/* hover text */}
                 <span className="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded-sm bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
-                  Manage Project
+                  Home
                 </span>
               </Link>
 
@@ -30,7 +30,7 @@ export const Sidebar = () => {
                 <Image width={30} height={30} alt="" src={"https://img.icons8.com/?size=100&id=udjU_YS4lMXL&format=png&color=000000"}></Image>
                 {/* hover text */}
                 <span className="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded-sm bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
-                  Manage Project
+                  Dashboard
                 </span>
               </Link>
 
