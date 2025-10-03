@@ -1,19 +1,22 @@
 "use client";
 import { useAuth } from '@/context/AuthContext';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react'
 export const Navbar = () => {
 
+    const pathname = usePathname()
+
     const links = <>
-        <li> <Link href="/" >Home</Link> </li>
-        <li> <Link href="#" >Item 1</Link> </li>
+        <li> <Link href="/" ><button className={`${pathname === "/" ? "text-blue-400" : ""}`}>Home</button></Link> </li>
+        <li> <Link href="blogs" ><button className={`${pathname === "/blogs" ? "text-blue-400" : ""}`}>Blogs</button></Link> </li>
         <li> <Link href="#" >Item 1</Link> </li>
     </>
 
     const { user } = useAuth()
 
     return (
-        <div className="navbar bg-base-100 ">
+        <div className="navbar bg-base-100 max-w-[1500px] w-11/12 mx-auto">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -27,7 +30,7 @@ export const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <a className="btn btn-ghost text-xl">DevAsif</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

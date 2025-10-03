@@ -11,7 +11,7 @@ const WhyChooseMe = () => {
                 style={{ backgroundImage: "url('/coloredshape.svg')" }}
                 className="lg:h-[800px] w-full object-cover bg-cover flex justify-center items-center  "
             >
-                <div className="lg:w-4/5 w-full  mx-auto  flex flex-col-reverse lg:flex-row justify-between">
+                <div className="max-w-[1500px] w-full  mx-auto  flex flex-col-reverse lg:flex-row justify-between">
                     {/* text content  */}
 
                     <div className="text-white justify-center lg:w-[50%] w-full lg:pt-20 py-5 px-5">

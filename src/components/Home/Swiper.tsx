@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 // import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -65,7 +66,7 @@ export const customerReviews: IReviewCard[] = [
 
 export const Swipers = () => {
     return (
-        <div className='md:w-4/5 w-11/12 mx-auto my-5'>
+        <div className='max-w-[1500px] w-11/12 mx-auto my-5'>
             {/* text content */}
             <div className='text-center mb-2'>
                 <h3 className='font-extrabold text-4xl text-gray-800'>Proof of Impact: What Clients Are <br />Saying</h3>
