@@ -1,5 +1,7 @@
 "use client"
 import { useAuth } from "@/context/AuthContext"
+import BlogsTableSection from "@/sections/BlogsTableSection"
+import ProjectsTableSection from "@/sections/ProjectsTableSection"
 
 
 const DashboardPage = () => {
@@ -7,7 +9,10 @@ const DashboardPage = () => {
 
 
     return (
-        <h3>{user?.name}</h3>
+        <div className="flex flex-col mx-auto">
+            <BlogsTableSection></BlogsTableSection>
+            <ProjectsTableSection></ProjectsTableSection>
+        </div>
 
     )
 }

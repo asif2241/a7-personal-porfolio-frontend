@@ -1,6 +1,6 @@
 "use client"
 
-import { addProject } from "@/actions/addProject"
+import { addProject } from "@/actions/projectActions"
 import Form from "next/form"
 import Image from "next/image"
 import { useState } from "react"
@@ -64,15 +64,38 @@ export const AddProjectForm = () => {
                     </label>
 
                     <label>
-                        <span className="text-sm font-medium text-gray-700 dark:text-gray-200"> projectUrl </span>
+                        <span className="text-sm font-medium text-gray-700 dark:text-gray-200"> Frontend Code Link </span>
 
                         <input
                             type="text"
-                            name="author"
-                            placeholder="projectUrl"
+                            name="frontendCodeLink"
+                            placeholder="Frontend Code Link"
                             className="input input-sm md:input-xl w-full"
                         />
                     </label>
+
+                    <label>
+                        <span className="text-sm font-medium text-gray-700 dark:text-gray-200"> backendCodeLink </span>
+
+                        <input
+                            type="text"
+                            name="backendCodeLink"
+                            placeholder="Backend Code Link"
+                            className="input input-sm md:input-xl w-full"
+                        />
+                    </label>
+
+                    <label>
+                        <span className="text-sm font-medium text-gray-700 dark:text-gray-200"> Tech Stacks (comma separated)  </span>
+
+                        <input
+                            type="text"
+                            name="techStack"
+                            placeholder="Tech Stacks"
+                            className="input input-sm md:input-xl w-full"
+                        />
+                    </label>
+
 
 
 
@@ -86,15 +109,7 @@ export const AddProjectForm = () => {
                         ></textarea>
                     </div>
 
-                    <div className="col-span-2" >
-                        <span className="text-sm font-medium text-gray-700 dark:text-gray-200"> Tech Stacks (comma separated) </span>
 
-                        <textarea
-                            name="techStack"
-                            className="textarea  w-full"
-                            placeholder=" Tech Stacks"
-                        ></textarea>
-                    </div>
 
 
 

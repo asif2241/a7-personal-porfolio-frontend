@@ -1,7 +1,6 @@
 import { getAllBlogs } from "@/actions/blogActions";
 import { getAllProjects } from "@/actions/projectActions";
 import { Hero } from "@/components/Home/Hero";
-import MySkills from "@/components/Home/MySkills";
 import { Swipers } from "@/components/Home/Swiper";
 import WhyChooseMe from "@/components/Home/WhyChooseMe";
 import BlogShowcaseSection from "@/sections/BlogShowcaseSection";
@@ -12,7 +11,7 @@ export default async function HomePage() {
     const projects = await getAllProjects()
     // console.log(projects);
     const blogs = await getAllBlogs()
-    console.log(blogs);
+    // console.log(blogs);
 
 
 
@@ -20,7 +19,6 @@ export default async function HomePage() {
         <div>
             <main>
                 <Hero></Hero>
-                <MySkills></MySkills>
                 <ProjectShowcaseSection projects={projects}></ProjectShowcaseSection>
                 <Swipers></Swipers>
                 <BlogShowcaseSection blogs={blogs}></BlogShowcaseSection>

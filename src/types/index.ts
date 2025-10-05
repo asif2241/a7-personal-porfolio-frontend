@@ -2,11 +2,13 @@ export interface IProject {
     _id: string,
     title: string,
     thumbnail: string,
-    projectUrl: string,
+    backendCodeLink?: string,
+    frontendCodeLink?: string,
     liveLink?: string,
     description: string,
     techStack?: string[],
     features: string[],
+    views: number,
     createdAt?: string,
     updatedAt?: string
 }

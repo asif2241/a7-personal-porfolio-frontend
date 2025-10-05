@@ -10,7 +10,7 @@ export const Navbar = () => {
     const links = <>
         <li> <Link href="/" ><button className={`${pathname === "/" ? "text-blue-400" : ""}`}>Home</button></Link> </li>
         <li> <Link href="blogs" ><button className={`${pathname === "/blogs" ? "text-blue-400" : ""}`}>Blogs</button></Link> </li>
-        <li> <Link href="#" >Item 1</Link> </li>
+        <li> <Link href="about-me" >About Me</Link> </li>
     </>
 
     const { user } = useAuth()

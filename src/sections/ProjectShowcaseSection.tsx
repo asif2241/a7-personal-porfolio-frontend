@@ -22,9 +22,11 @@ const ProjectShowcaseSection = ({ projects }: Props) => {
 
             <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1my-5 gap-4 '>
                 {
-                    projects.slice(0, 3).map((project) => (
-                        <ProjectCard project={project} key={project._id}></ProjectCard>
-                    ))
+                    projects
+                        .sort((a, b) => new Date(b.createdAt as string).getTime() - new Date(a.createdAt as string).getTime())
+                        .slice(0, 3).map((project) => (
+                            <ProjectCard project={project} key={project._id}></ProjectCard>
+                        ))
                 }
             </div>
         </div>

@@ -21,9 +21,11 @@ const BlogShowcaseSection = ({ blogs }: Props) => {
 
             <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1my-5 gap-4 '>
                 {
-                    blogs.slice(0, 3).map((blog) => (
-                        <BlogCard blog={blog} key={blog._id}></BlogCard>
-                    ))
+                    blogs
+                        .sort((a, b) => new Date(b.createdAt as string).getTime() - new Date(a.createdAt as string).getTime())
+                        .slice(0, 3).map((blog) => (
+                            <BlogCard blog={blog} key={blog._id}></BlogCard>
+                        ))
                 }
             </div>
         </div>

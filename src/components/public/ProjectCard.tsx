@@ -1,6 +1,7 @@
 "use client"
 import { IProject } from "@/types";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ProjectCardProps {
   project: IProject
@@ -8,7 +9,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <div>
+    <Link href={`project/${project._id}`}>
       <article className="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-xs">
         <Image
           width={400}
@@ -19,18 +20,16 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         />
 
         <div className="p-4 sm:p-6">
-          <a href="#">
-            <h3 className="text-lg font-medium text-gray-900">
-              {project.title}
-            </h3>
-          </a>
+          <h3 className="text-lg font-medium text-gray-900">
+            {project.title}
+          </h3>
 
           <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
             {project.description}
           </p>
 
-          <a
-            href="#"
+          <p
+
             className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue-600"
           >
             Find out more
@@ -40,10 +39,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             >
               &rarr;
             </span>
-          </a>
+          </p>
         </div>
       </article>
-    </div>
+    </Link>
   );
 };
 
