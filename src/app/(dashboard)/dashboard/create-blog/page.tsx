@@ -5,7 +5,10 @@ const CreateBlog = () => {
 
 
     return (
+
+
         <CreateBlogForm></CreateBlogForm>
+
     );
 };
 

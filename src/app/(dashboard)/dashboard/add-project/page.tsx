@@ -1,6 +1,8 @@
+import { getProjectById } from "@/actions/projectActions";
 import { AddProjectForm } from "@/components/dashboard/project/AddProjectForm";
 
 const AddProject = () => {
+
     return (
         <AddProjectForm></AddProjectForm>
     );

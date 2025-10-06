@@ -9,8 +9,9 @@ export const Navbar = () => {
 
     const links = <>
         <li> <Link href="/" ><button className={`${pathname === "/" ? "text-blue-400" : ""}`}>Home</button></Link> </li>
-        <li> <Link href="blogs" ><button className={`${pathname === "/blogs" ? "text-blue-400" : ""}`}>Blogs</button></Link> </li>
-        <li> <Link href="about-me" >About Me</Link> </li>
+        <li> <Link href="/blogs" ><button className={`${pathname === "/blogs" ? "text-blue-400" : ""}`}>Blogs</button></Link> </li>
+        <li> <Link href="/about-me" ><button className={`${pathname === "/about-me" ? "text-blue-400" : ""}`}>About Me</button></Link> </li>
+        <li> <Link href="/project" ><button className={`${pathname === "/project" ? "text-blue-400" : ""}`}>Projects</button></Link> </li>
     </>
 
     const { user } = useAuth()

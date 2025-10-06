@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import React, { createContext, useContext, useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 interface User {
     _id?: string,
@@ -43,10 +44,21 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         setUser(userData)
     }
 
-    const logout = () => {
-        localStorage.removeItem("user")
-        setUser(null)
-        router.push("/")
+    const logout = async () => {
+        const result = await Swal.fire({
+            title: "Are you sure?",
+            text: "Do you really want to log out?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, logout",
+            cancelButtonText: "Cancel",
+        })
+        if (result.isConfirmed) {
+
+            localStorage.removeItem("user")
+            setUser(null)
+            router.push("/")
+        }
     }
 
 

@@ -1,6 +1,7 @@
 "use client"
 import { getAllProjects } from '@/actions/projectActions'
 import { IProject } from '@/types'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
 const ProjectsTableSection = () => {
@@ -17,6 +18,8 @@ const ProjectsTableSection = () => {
         <div className='mr-1'>
             <div>
                 <h3 className='text-gray-800 font-bold text-3xl text-center my-10'>Manage Projects</h3>
+                <p className='text-lg font-bold text-gray-600 text-center'>Click The Details Button to View, Edit or Delete A Project</p>
+
             </div>
             <div className="overflow-x-auto   rounded border border-gray-300 shadow-sm">
                 <table className="min-w-full divide-y-2 divide-gray-200">
@@ -40,7 +43,7 @@ const ProjectsTableSection = () => {
                                     <td className="px-3 py-2 whitespace-nowrap">{project.title.slice(0, 20)}....</td>
                                     <td className="px-3 py-2 whitespace-nowrap">{project.createdAt?.split('T')[0]}</td>
                                     <td className="px-3 py-2 whitespace-nowrap text-center">{project.views}</td>
-                                    <td className="px-3 py-2 whitespace-nowrap">details</td>
+                                    <td className="px-3 py-2 whitespace-nowrap"><Link className='btn btn-secondary' href={`/project/${project._id}`}>View Details</Link></td>
                                 </tr>
                             ))
                         }

@@ -1,5 +1,5 @@
 
-import BlogActionsBtn from "@/components/public/BlogActionsBtn";
+import DynaminBlogActions from "@/components/public/DynamicBlogAction";
 import { IBlog } from "@/types";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -20,7 +20,17 @@ export const generateStaticParams = async () => {
         }));
 };
 
+export const generateMetaData = async ({ params }: { params: { slug: string } }) => {
+    const { slug } = await params
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/blogs/${slug}`);
+    const data = await res.json();
+    const blog: IBlog = data.data;
 
+    return {
+        title: blog?.slug,
+        description: blog?.content
+    }
+}
 
 
 const BlogPage = async ({ params }: Props) => {
@@ -77,7 +87,7 @@ const BlogPage = async ({ params }: Props) => {
 
 
             {/* Action Buttons */}
-            <BlogActionsBtn blogId={blog._id} slug={blog.slug as string}></BlogActionsBtn>
+            <DynaminBlogActions blogId={blog._id} slug={blog.slug as string}></DynaminBlogActions>
         </div>
     );
 };

@@ -1,9 +1,11 @@
 "use client";
+import { useAuth } from "@/context/AuthContext";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 export const Sidebar = () => {
+  const { logout } = useAuth()
   return (
     <div className="flex h-screen w-24 flex-col justify-between border-e border-gray-100 bg-white">
       <div>
@@ -41,7 +43,7 @@ export const Sidebar = () => {
                 <Image width={30} height={30} alt="" src={"https://img.icons8.com/?size=100&id=N9ekZ8QNfGM5&format=png&color=000000"}></Image>
                 {/* hover text */}
                 <span className="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded-sm bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
-                  Manage Blogs
+                  Add Blogs
                 </span>
               </Link>
 
@@ -51,7 +53,7 @@ export const Sidebar = () => {
                 <Image width={30} height={30} alt="" src={"https://img.icons8.com/?size=100&id=105286&format=png&color=000000"}></Image>
                 {/* hover text */}
                 <span className="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded-sm bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
-                  Manage Project
+                  Add Project
                 </span>
               </Link>
 
@@ -61,8 +63,8 @@ export const Sidebar = () => {
       </div>
 
       <div className="sticky inset-x-0 bottom-0 border-t border-gray-100 bg-white p-2">
-        <a
-          href="#"
+        <button
+          onClick={logout}
           className="group relative flex w-full justify-center rounded-lg px-2 py-1.5 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
         >
           <svg
@@ -83,7 +85,7 @@ export const Sidebar = () => {
           <span className="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded-sm bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
             Logout
           </span>
-        </a>
+        </button>
       </div>
     </div>
   );

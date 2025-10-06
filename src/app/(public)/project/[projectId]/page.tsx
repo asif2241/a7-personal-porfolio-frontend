@@ -1,10 +1,12 @@
 
-import { IBlog, IProject } from "@/types";
+import { IProject } from "@/types";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import BlogDetailsBtn from "@/components/public/BlogActionsBtn";
 import Link from "next/link";
-import ProjectActionsBtn from "@/components/public/ProjectActionsBtn";
+import DynamicProjectActions from "@/components/public/DynamicProjectAction";
+
+
+
 
 type Props = {
     params: { projectId: string };
@@ -121,7 +123,7 @@ const ProjectPage = async ({ params }: Props) => {
                         </Link>
                     )}
                 </div>
-                <ProjectActionsBtn></ProjectActionsBtn>
+                <DynamicProjectActions projectId={projectId}></DynamicProjectActions>
             </div>
         </div>
     );
