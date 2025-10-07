@@ -10,10 +10,10 @@ export const CreateBlogForm = () => {
 
     const clientAction = async (formData: FormData) => {
         const result = await createBlog(formData)
-        console.log(result);
+        // console.log(result);
         if (!result.success) {
             Swal.fire("⚠️ Error!", "Something went wrong!", "error");
-            console.log(result);
+            // console.log(result);
         }
         if (result.success) {
             Swal.fire("✅ Success!", "Blog created successfully.", "success");

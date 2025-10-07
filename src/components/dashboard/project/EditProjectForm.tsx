@@ -12,7 +12,7 @@ const clientAction = async (formData: FormData) => {
     const result = await editProject(formData)
     if (!result.success) {
         Swal.fire("⚠️ Error!", "Something went wrong!", "error");
-        console.log(result);
+        // console.log(result);
     }
     if (result.success) {
         Swal.fire("✅ Success!", "Project updated successfully.", "success");

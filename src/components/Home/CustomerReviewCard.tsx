@@ -1,7 +1,6 @@
 "use client"
 import Image from 'next/image'
 import React from 'react'
-import iii from "../../assets/ptocrop.png"
 
 export interface IReviewCard {
     id: string,

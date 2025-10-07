@@ -5,7 +5,7 @@ import React from 'react'
 
 const AllBlogs = async () => {
     const blogs = await getAllBlogs()
-    console.log(blogs);
+    // console.log(blogs);
     return (
         <div className='my-10  max-w-[1500px] w-11/12 mx-auto'>
             <h3 className='text-center font-bold lg:text-4xl md:text-3xl text-2xl mb-5'>Explore The Latest News From The Industry!</h3>

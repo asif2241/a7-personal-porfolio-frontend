@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
+import { revalidateBlogsTagAndPath } from "@/actions/blogActions"
 import { useAuth } from "@/context/AuthContext"
 import Image from "next/image"
 import Link from "next/link"
@@ -53,13 +54,15 @@ const BlogActionsBtn = ({ blogId, slug }: Props) => {
                     title: "Deleted!",
                     text: "Your blog has been successfully deleted.",
                     icon: "success"
+                }).then(async () => {
+                    await revalidateBlogsTagAndPath()
                 });
 
                 router.push("/")
 
 
             } catch (err) {
-                console.log(err);
+                // console.log(err);
                 Swal.fire({
                     title: "Failed!",
                     text: "The deletion failed due to a server error.",

@@ -14,11 +14,10 @@ type Props = {
 export const generateStaticParams = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/projects`);
     const { data: projects } = await res.json();
-
+    console.log("base api:", process.env.NEXT_PUBLIC_BASE_API);
     return projects.map((project: IProject) => ({
         projectId: project._id,
     }));
-
 
 };
 

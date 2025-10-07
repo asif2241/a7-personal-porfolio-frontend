@@ -1,11 +1,10 @@
 "use client"
-import { useAuth } from "@/context/AuthContext"
 import BlogsTableSection from "@/sections/BlogsTableSection"
 import ProjectsTableSection from "@/sections/ProjectsTableSection"
 
 
 const DashboardPage = () => {
-    const { user } = useAuth()
+    // const { user } = useAuth()
 
 
     return (

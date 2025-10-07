@@ -5,7 +5,7 @@ import React from 'react'
 
 const AllProjects = async () => {
     const projects = await getAllProjects()
-    console.log(projects);
+    // console.log(projects);
     return (
         <div className='my-10  max-w-[1500px] w-11/12 mx-auto'>
             <h3 className='text-center font-bold lg:text-4xl md:text-3xl text-2xl mb-5'>Explore My Latest Works!</h3>

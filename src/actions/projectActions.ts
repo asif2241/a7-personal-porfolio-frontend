@@ -64,7 +64,7 @@ export const getProjectById = async (id: string): Promise<IProject | undefined> 
 
 
 export const getAllProjects = async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/projects?sort=createdAt`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/projects`, {
         next: {
             tags: ["PROJECTS"]
         }
@@ -121,4 +121,9 @@ export const editProject = async (data: FormData) => {
     } catch (error: any) {
         return error
     }
+};
+
+export const revalidateProjectsTag = async () => {
+    revalidateTag("PROJECTS");
+    revalidatePath("/project")
 };

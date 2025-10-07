@@ -93,3 +93,7 @@ const BlogPage = async ({ params }: Props) => {
 };
 
 export default BlogPage;
+
+// > Build error occurred
+// [Error: Failed to collect page data for /blogs/[slug]] { type: 'Error' }
+// PS D:\level2\Assignments\b7-personal-portfolio-client>

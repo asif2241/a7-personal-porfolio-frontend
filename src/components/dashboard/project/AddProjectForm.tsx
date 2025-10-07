@@ -30,10 +30,10 @@ export const AddProjectForm = () => {
 
     const clientAction = async (data: FormData) => {
         const result = await addProject(data)
-        console.log(result);
+        // console.log(result);
         if (!result.success) {
             Swal.fire("⚠️ Error!", "Something went wrong!", "error");
-            console.log(result);
+            // console.log(result);
         }
         if (result.success) {
             Swal.fire("✅ Success!", "Project Added successfully.", "success");

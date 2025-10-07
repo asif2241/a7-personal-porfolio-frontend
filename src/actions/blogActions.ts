@@ -113,4 +113,7 @@ export const editBlog = async (formData: FormData) => {
 };
 
 
-
+export const revalidateBlogsTagAndPath = async () => {
+    revalidateTag("BLOGS")
+    revalidatePath("/blogs")
+}

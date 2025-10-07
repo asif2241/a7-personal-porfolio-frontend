@@ -10,7 +10,7 @@ const EditBlogForm = ({ blog }: { blog: IBlog }) => {
 
     const clientAction = async (formData: FormData) => {
         const result = await editBlog(formData)
-        // console.log(result);
+        console.log(result);
         if (!result.success) {
             Swal.fire("⚠️ Error!", "Something went wrong!", "error");
             console.log(result);

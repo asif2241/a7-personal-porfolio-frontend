@@ -1,4 +1,5 @@
 "use client"
+import { revalidateProjectsTag } from '@/actions/projectActions'
 import { useAuth } from '@/context/AuthContext'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -29,7 +30,7 @@ const ProjectActionsBtn = ({ projectId }: { projectId: string }) => {
                 });
 
                 const data = await res.json()
-                console.log(data);
+                // console.log(data);
 
                 if (!data.success) {
                     Swal.fire({
@@ -37,7 +38,7 @@ const ProjectActionsBtn = ({ projectId }: { projectId: string }) => {
                         text: "Project delation failed!.",
                         icon: "error"
                     });
-                    console.log(data);
+                    // console.log(data);
                     return;
                 }
                 else {
@@ -45,34 +46,26 @@ const ProjectActionsBtn = ({ projectId }: { projectId: string }) => {
                         title: "Deleted!",
                         text: "Your project has been successfully deleted.",
                         icon: "success"
-                    }).then(() => {
+                    }).then(async () => {
+                        await revalidateProjectsTag()
                         window.location.href = "/"
                     })
                 }
             } catch (err) {
-                console.log(err);
+                // console.log(err);
+
                 Swal.fire({
                     title: "Failed!",
                     text: "The deletion failed due to a server error.",
                     icon: "error"
                 });
+                return err
             }
         }
 
 
 
-        // try {
-        //     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/projects/delete/${id}`, {
-        //         method: "DELETE",
-        //         credentials: "include"
 
-
-        //     })
-        //     const result = await res.json();
-        //     return result
-        // } catch (error) {
-        //     console.log("project delete error", error);
-        // }
     }
 
     return (
